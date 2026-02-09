@@ -1,18 +1,14 @@
-
-//Problem 1:
+//Problem-01: New Price for Eid Sale
 function newPrice(currentPrice,discount){
-
     if(typeof currentPrice !=='number' || typeof discount !=='number' || discount <0 || discount>100){
         return "Invalid";
     }
-
-    const discountAmount = (currentPrice*discount) /100;
-    const price = currentPrice - discountAmount;
+    const discountAmount =(currentPrice*discount) /100;
+    const price =currentPrice - discountAmount;
     return price.toFixed(3);
 }
 
-//Problem 2:
-
+//Problem-02: OTP Validation for Zapshift
 function validOtp(otp){
     if(typeof otp !== 'string'){
         return "Invalid";
@@ -28,7 +24,7 @@ function validOtp(otp){
     
 }
 
-// Problem 3:
+//Problem-03: BCS Final Score Calculator
 function finalScore(omr) {
     if (typeof omr !== 'object' || omr === null || Array.isArray(omr)) {
         return "Invalid";
@@ -48,11 +44,40 @@ function finalScore(omr) {
     return Math.round(totalScore);
 }
 
-// problem 4:
+//Problem-04: Upcoming Gono Vote
+function gonoVote(array){
+if(!Array.isArray(array)){
+    return "Invalid";
+}
 
-// problem 5:
+let haVot =0;
+let naVot =0;
+
+for(let vote of array){
+
+    if(vote === "ha"){
+    haVot++;
+    }
+    else if(vote === "na"){
+    naVot++;
+    }
+}
+
+if(haVot>naVot){
+    return true;
+
+}
+else if(haVot === naVot){
+    return "equal";
+}
+else{
+    return false;
+}
 
 
+}
+
+//Problem-05: Text Analyzer for an AI Company
 function analyzeText(str){
   if(typeof str !== "string"){
     return "Invalid";
@@ -80,3 +105,4 @@ return {
 };
 
 }
+

@@ -1,27 +1,59 @@
-function gonoVote(array) {
-    if (!Array.isArray(array)) {
-        return "Invalid";
+function gonoVote(array){
+if(!Array.isArray(array)){
+    return "Invalid";
+}
+
+let haVot =0;
+let naVot =0;
+
+for(let vote of array){
+
+    if(vote === "ha"){
+    haVot++;
     }
-
-    const haVot = 0;
-    const navot = 0;
-
-    for (let i = 0; i < array.length; i++) {
-        if (array[i] === "ha") {
-            haVot++;
-        } else if (array[i] === "na") {
-            navot++;
-        }
-    }
-
-    if (haVot > navot) {
-        return true;
-    } else if (haVot === navot) {
-        return "equal";
-    } else {
-        return false;
+    else if(vote === "na"){
+    naVot++;
     }
 }
 
-const output = gonoVote("ha","ha");
+if(haVot>naVot){
+    return true;
+
+}
+else if(haVot === naVot){
+    return "equal";
+}
+else{
+    return false;
+}
+
+
+}
+
+// function gonoVote(array) {
+//   if (!Array.isArray(array)) {
+//     return "Invalid";
+//   }
+
+//   let haCount = 0;
+//   let naCount = 0;
+
+//   for (let vote of array) {
+//     if (vote === "ha") {
+//       haCount++;
+//     } else if (vote === "na") {
+//       naCount++;
+//     }
+//   }
+
+//   if (haCount > naCount) {
+//     return true;
+//   } else if (haCount === naCount) {
+//     return "equal";
+//   } else {
+//     return false;
+//   }
+// }
+
+const output =gonoVote(["ha", "ha", "ha", "na"]);
 console.log(output);
